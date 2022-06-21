@@ -1,0 +1,8 @@
+int value = 3;
+int * ptr = &value; -> pointers are decleared like this
+
+pointer ptr = &value; -> pointers are not declared like this
+
+REASON =>
+a. we can know the data type to which it is pointing.
+b. we can know how much memory should be considered.
