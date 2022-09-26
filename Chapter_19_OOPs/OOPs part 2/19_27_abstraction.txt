@@ -1,3 +1,5 @@
 It is the 4th pillar of OOP
 it is basically "Implementation hiding and showing the necessary things only"
 For more reference, visit codestudio documentation.
+
+encapsulation vs. abstraction : https://stackoverflow.com/questions/742341/difference-between-abstraction-and-encapsulation
