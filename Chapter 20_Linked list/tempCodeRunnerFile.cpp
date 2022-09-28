@@ -1,0 +1,12 @@
+insert (tail, 3, 5);
+    // print(tail);
+    // insert (tail, 5, 7);
+    // print(tail);
+    // insert (tail, 7, 9);
+    // print(tail);
+    // insert (tail, 9, 11);
+    // print(tail);
+    // insert (tail, 7, 15);
+    // print(tail);
+    // insert (tail, 9 , 17);
+    // print(tail);
