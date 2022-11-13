@@ -18,12 +18,11 @@ Node * createBinaryTree (Node * root){
     cout << "Enter the data: " ;
     int data;
     cin >> data;
+    root = new Node(data);
     
     if (data == -1){
         return NULL;
     }
-
-    root = new Node(data);
 
     cout << "Enter the left child of " << data << " :" << endl;
     root->left = createBinaryTree(root->left);
@@ -34,33 +33,87 @@ Node * createBinaryTree (Node * root){
 }
 
 void levelOrderTraversal (Node * root){
-    queue <Node*> q;
-    Node * temp = root;
-    q.push(root);
-    q.push(NULL);
+    queue <Node *> q;
+    q.push (root);
+    q.push (NULL);
 
     while (!q.empty()){
-        if (temp == NULL){
-            cout << endl;
-        }
+        Node * temp = q.front();
+        q.pop();
 
+        if (temp == NULL){
+            // previous level is traversed completely
+            cout << endl;
+            if (!q.empty()){
+                // queue still has child nodes of the next level
+                q.push(NULL);
+            }
+        }
         else{
-            cout << temp->data << " ";
-            if (temp->left){
+            cout << temp->data << " " ;
+            if (temp->left)
                 q.push(temp->left);
-            }
-            if (temp->right){
+            if (temp->right)
                 q.push(temp->right);
-            }
         }
     }
+}
+
+void inorder (Node * root){
+    // inorder : LNR
+
+    // base case 
+    if (root == NULL)
+        return;
+    
+    // LNR
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder (root->right);
+}
+
+void preorder (Node * root){
+    // preorder : NLR
+
+    // base case 
+    if (root == NULL)
+        return;
+    
+    // NLR
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder (root->right);
+}
+
+void postorder (Node * root){
+    // postorder : LRN
+
+    // base case 
+    if (root == NULL)
+        return;
+    
+    // LRN
+    postorder(root->left);
+    postorder (root->right);
+    cout << root->data << " ";
 }
 
 int main (){
 
     Node * root = NULL;
-    createBinaryTree(root);
+    root = createBinaryTree(root);
+    // i/p : 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
+
+    cout << "Printing the tree by Level Order Traversal: " << endl;
     levelOrderTraversal(root);
-    
+    cout << "inorder traversal : ";
+    inorder(root);
+    cout << endl;
+    cout << "preorder traversal : ";
+    preorder(root);
+    cout << endl;
+    cout << "postorder traversal : ";
+    postorder(root);
+    cout << endl;
 return 0;
 }
