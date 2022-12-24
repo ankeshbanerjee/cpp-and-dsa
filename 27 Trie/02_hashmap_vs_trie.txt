@@ -1,0 +1,22 @@
+As it is seen that the complexities of the operations of both hashmaps and trie are O(L),
+Then why use trie to create a dictionary?
+
+1. Consider the following words:
+ARM, ARMY, ARMCHAIR, ARMINO, ARDENO.
+-> If we used hashmaps, then each of the above words would have been stored in the form of different and unique keys
+So, each word would have taken individual spaces in the memory.
+-> Whereas, if we used trie, is problem can be solved. because in trie the words would be stored in the form of a tree
+        root
+        /
+       A
+       |
+       R
+      / \
+   - M   D
+    /|\   \
+   Y C I    E........
+   .........
+
+2. If we type 'AR', then suggestion of the word can be shown easily if we have implemented the dictionary using Trie.
+But in case, we used hashmaps, then it required whole traversal, string comparisons etc.
+So, using trie is convenient in that case also.
