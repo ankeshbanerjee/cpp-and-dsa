@@ -28,6 +28,15 @@ public:
     }
 };
 
+/*
+TC = O(N*M), 
+bcz in worst case dfs will go for every element, and for each element there will be 4 dfs
+so total 4*N*M dfs calls will be there. so TC = (4*N*M) = O(N*M)
+
+SC = O(N*M)
+bcz of creating the ans matrix and recursive function call stack space is also O(N*M)
+*/
+
 int main (){
     
 return 0;
