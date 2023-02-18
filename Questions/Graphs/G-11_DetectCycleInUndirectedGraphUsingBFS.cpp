@@ -13,12 +13,14 @@ private:
             int parent = q.front().second;
             q.pop();
             
-            for (auto it: adj[node]){
-                if (!vis[it]){
-                    vis[it] = 1;
-                    q.push({it, node});
+            for (auto adjacentNode: adj[node]){
+                if (!vis[adjacentNode]){
+                    vis[adjacentNode] = 1;
+                    q.push({adjacentNode, node});
                 }
-                else if (it != parent){
+                else if (adjacentNode != parent){
+                    // if the adjacentNode is not the parent and it has been touched before by any other vertex (vis[adjacentNode] == 1), 
+                    // then graph definitely contains cycle
                     return true;
                 }
             }
@@ -47,6 +49,6 @@ SC = O(N) : for using queue, vis array
 */
 
 int main (){
-    
-return 0;
+
+    return 0;
 }
