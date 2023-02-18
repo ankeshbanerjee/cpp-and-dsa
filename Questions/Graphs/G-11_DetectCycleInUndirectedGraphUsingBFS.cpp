@@ -39,6 +39,13 @@ public:
     }
 };
 
+/*
+TC = O(N+2E) : consider the adj matrix, for each vertex, bfs will run for its degrees, and total degree is 2E
+and total no. of vertices is N, so, N + 2E
+
+SC = O(N) : for using queue, vis array
+*/
+
 int main (){
     
 return 0;
