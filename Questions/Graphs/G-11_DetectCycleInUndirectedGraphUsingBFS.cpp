@@ -28,6 +28,7 @@ private:
 public:
     bool isCycle(int V, vector<int> adj[]) {
         int vis[V] = {0};
+        // for graphs with multiple components
         for (int i = 0; i < V; i++){
             if (!vis[i]){
                 if (detectCycle (i, vis, adj))
