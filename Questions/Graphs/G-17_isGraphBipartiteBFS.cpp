@@ -27,6 +27,8 @@ public:
     bool isBipartite(vector<vector<int>>& graph) {
         int v = graph.size();
         vector <int> color (v, -1);
+
+        // checking for all the components
         for (int i=0; i<v; i++){
             // if not colored
             if (color[i] == -1){
@@ -36,3 +38,6 @@ public:
         return true;
     }
 };
+
+// TC & SC = same as that of bfs
+// TC = O(V+2E) SC = O(V)
