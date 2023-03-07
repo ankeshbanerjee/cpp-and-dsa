@@ -1,7 +1,7 @@
 /*
 topological sorting : it is the linear ordering of the vertices such that 
 if there is an edge from u to v, then u is always placed before v in that ordering.
-it is relevant for DAG (Directed Acyclic Graph)
+it is valid for only DAG (Directed Acyclic Graph)
 because:
 1. if undirected, then u - v means, u -> v and v -> u
 so, which vertex should be placed before which, can't be decided
@@ -54,3 +54,6 @@ class Solution
 	    return ans;
 	}
 };
+
+// TC = O(V + E)
+// SC = O(V)
