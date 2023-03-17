@@ -69,3 +69,18 @@ class Solution{
         return ans;
     }
 };
+
+/*
+Important note:
+
+Scenarios where no valid ordering is possible:
+case 1. 
+abcd abc
+here everything matches and the larger string is before shorter string, in this case ordering is not possible
+for valid ordering, shorter has to be before larger string, when every character matches
+
+case 2.
+abc bat ade
+according to this testcase, a comes before b and then b comes before a, which is not possible
+so, in case of cyclic dependency, no valid ordering is possible
+*/
