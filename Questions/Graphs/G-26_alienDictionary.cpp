@@ -7,10 +7,10 @@ Intuition:
     * approach : whenever will find a differenct character, that means s1[i] -> s2[i]
                 (edge from that character of the former string to the character of the same index of the later string)
 5. in the adj list letters are represented as follows:
-'a' = 0
-'b' = 1
-'c' = 2
-'d' = 3
+'a' = 0 (0 index represents 'a')
+'b' = 1 (1 index represents 'b')
+'c' = 2 (2 index represents 'c')
+'d' = 3 (3 index represents 'd')
 ......
 */
 
