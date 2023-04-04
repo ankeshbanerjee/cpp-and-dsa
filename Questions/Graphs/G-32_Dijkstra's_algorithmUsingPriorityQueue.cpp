@@ -4,11 +4,9 @@ using namespace std;
 class Solution
 {
 	public:
-	//Function to find the shortest distance of all the vertices
-    //from the source vertex S.
+	//Function to find the shortest distance of all the vertices from the source vertex S.
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
-        // Code here
         // using min heap
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>> > pq;
         vector <int> dist(V);
@@ -36,3 +34,8 @@ class Solution
         return dist;
     }
 };
+
+// dijkstra's algorithm is not valid if there is any -ve weighted edge, or a cycle of -ve weight
+// reason : watch striver's lecture 32
+
+// TC : ElogV
