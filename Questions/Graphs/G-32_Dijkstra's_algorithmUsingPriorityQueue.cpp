@@ -7,7 +7,7 @@ class Solution
 	//Function to find the shortest distance of all the vertices from the source vertex S.
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
-        // using min heap
+        // using min heap (to get the smallest dist at the top of the min heap, in each iteration)
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>> > pq;
         vector <int> dist(V);
         for (int i=0; i<V; i++)dist[i] = 1e9;
