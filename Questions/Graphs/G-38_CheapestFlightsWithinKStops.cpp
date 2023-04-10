@@ -44,5 +44,7 @@ public:
         }
         return (dist[dst] == 1e9) ? -1 : dist[dst];
     }
-
 };
+
+// TC = E = number of edges = flights.size()
+// in dijkstra's algorithm, if a simple q is taken instead of a pq, then the TC is O(E)
