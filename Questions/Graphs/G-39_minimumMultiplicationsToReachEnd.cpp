@@ -18,12 +18,14 @@ class Solution {
         q.push({0, start});
         int mod = 100000;
         
+        // O(10000)
         while (!q.empty()){
             auto temp = q.front();
             int steps = temp.first;
             int num = temp.second;
             q.pop();
             
+            // O(10000 * N)
             for (auto it : arr){
                 int newNode = (it * num) % mod;
                 if (newNode == end) return steps + 1;
@@ -36,3 +38,6 @@ class Solution {
         if (dist[end] == 1e9) return -1;
     }
 };
+
+// TC = O(10000 * N) => hypothetically in worst case, because there will be much lesser nodes than 0-9999,
+// all nodes between 0-9999 will surely not be present
