@@ -2,6 +2,10 @@
 using namespace std;
 
 // Bellman ford algorithm : 
+// it helps to detect negative cycles, which is dijkstra's algo is unable to do.
+// it is valid for directed graph. if undirected graph is given, then store the edges as directed graph, i.e., u-v => u->v & v->u
+
+// algorithm:
 // Relax all the edges for N-1 times
 // Relaxation => if (dist[u] + wt < dist[v])dist[v] = dist[u] + wt;
 
