@@ -7,7 +7,7 @@ using namespace std;
 
 // Prim's Algorithm : to find the minimum spanning tree
 // basic intuition : going to each node and find for the smallest edge, which is the basic greedy intuition
-// so, Prim's algo is based on greedy intuition basically.
+// so, Prim's algo is simply based on greedy intuition.
 
 class Solution
 {
