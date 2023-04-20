@@ -29,9 +29,8 @@
 // 2. find the ranks of ulp_u and ulp_v
 // 3. always connect the smaller sized node to the bigger one and add the size of the added node to the bigger node
 
-// Note :  1. After connecting all the given edges, the parent array will store the ultimate parent of each node,
-//            but before connecting all the given edges, to find the ultimate parent, you have to call the findUltimateParent function,
-//            you can't get the ultimate parent from the parent array before connecting all the given edges
+// Note :  1. After connecting all the given edges, the parent array may not store the ultimate parent of each node,
+//            so, whenever you need to get the ultimate parent of any node, just call the findUltimateParent() function.
 //         2. Here a graph is not created, rather Disjoint set is completely a different data structure
 
 #include <bits/stdc++.h>
