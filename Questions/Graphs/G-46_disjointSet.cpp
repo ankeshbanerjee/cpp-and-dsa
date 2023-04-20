@@ -31,7 +31,8 @@
 
 // Note :  1. After connecting all the given edges, the parent array may not store the ultimate parent of each node,
 //            so, whenever you need to get the ultimate parent of any node, just call the findUltimateParent() function.
-//         2. Here a graph is not created, rather Disjoint set is completely a different data structure
+//         2. If you need to find the size of a component to which a particular node belongs, get that from => ds.size[ds.findUltimateParent(node)]
+//         3. Here a graph is not created, rather Disjoint set is completely a different data structure
 
 #include <bits/stdc++.h>
 using namespace std;
