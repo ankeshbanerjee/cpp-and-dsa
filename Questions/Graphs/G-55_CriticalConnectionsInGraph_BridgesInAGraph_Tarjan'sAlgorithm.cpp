@@ -1,3 +1,8 @@
+// bridges/critical edges : 
+// the edge, on whose removal, the graph gets divided into two or more components, is called bridge or critical edge
+
+// to find the critical edges/ bridges in a graph, Tarjan's algorithm is implemented
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,8 +41,8 @@ public:
 
         // O(3N) -> space
         vector <int> vis(n, 0);
-        int tin[n]; // time of insertion in DFS
-        int low[n]; // lowest insertion time of all adjacent nodes apart from parent
+        int tin[n]; // stores the time of insertion of a node during DFS
+        int low[n]; // stores the minimum insertion time among all adjacent nodes apart from parent
         vector<vector<int>> bridges;
         dfs (0, -1, adj, vis, tin, low, bridges);
         return bridges;
