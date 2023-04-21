@@ -56,8 +56,10 @@ class Solution
     {
         //code here
         // step 1
+        // O(V) + O(V) ->space
         vector <int> vis(V, 0);
         stack <int> st;
+        // O(V+E) -> time (for dfs)
         for (int i=0; i<V; i++){
             if (!vis[i]){
                 dfs(i, vis, adj, st);
@@ -65,7 +67,9 @@ class Solution
         }
         
         // step 2
+        // O(V+E) -> space
         vector<int> adjT[V];
+        // O(V+E) -> time
         for (int i=0; i<V; i++){
             // reseting the vis array to reuse it
             vis[i] = 0;
@@ -77,6 +81,7 @@ class Solution
         
         // step 3
         int scc = 0;
+        // O(V+E) -> time (for dfs again)
         while (!st.empty()){
             int node = st.top();
             st.pop();
