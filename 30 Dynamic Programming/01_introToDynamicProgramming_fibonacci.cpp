@@ -28,25 +28,25 @@ int main (){
     // memoization => convert recursion to dp (Top-Down approach)
     // step 1 : create an array to store the results of overlapping subproblems
     // (check for the parameters which are changing, here 1 parameter is changing, so create 1-D array)
-    vector <int> dpM(n+1, -1);
-    cout << f(n, dpM) << endl;
+    vector <int> dpM(n, -1);
+    cout << f(n-1, dpM) << endl;
     // TC = O(N) ; SC = O(N) + O(N) (dp array + recursion call stack)
 
     // Tabulation : (Bottom-Up : from base case to the result) : this can be done by observing the recursion solution
-    vector<int> dpT(n+1, -1);
+    vector<int> dpT(n, -1);
     // look at the base cases and assign their values in the dp array accordingly
     dpT[0] = 0;
     dpT[1] = 1;
-    for (int i=2; i<=n; i++){
+    for (int i=2; i<n; i++){
         // just replace f(n-1) and f(n-2) with dp[n-1] and dp[n-2]
         dpT[i] = dpT[i-1] + dpT[i-2];
     }
-    cout << dpT[n] << endl;
+    cout << dpT[n-1] << endl;
     // TC = O(N) ; SC = O(N)
 
     // Space optimization :  whenever there is ind-1 or ind-2 types of stuffs, then there must be space optimization
     int prev = 1, prev2 = 0;
-    for (int i=2; i<=n; i++){
+    for (int i=2; i<n; i++){
         int curr = prev + prev2;
         prev2 = prev;
         prev = curr;
