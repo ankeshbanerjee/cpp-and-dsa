@@ -36,7 +36,7 @@ int ninjaTraining(int n, vector<vector<int>> &points)
 // TC = O(N*4)*3 => total combinations of (day, last)= N*4, for each combination loop runs for 4 times
 // SC = O(N) + O(N)
 
-// Tabulation
+// Tabulation - for 2 parameters (2-D dp), two outer loops for tabulation
 int ninjaTraining(int n, vector<vector<int>> &points)
 {
     // Write your code here.

@@ -1,8 +1,8 @@
 // Those who cannot remember the past are condemned to repeat it .... ~DP
 
 // There are two approaches people use to solve dynamic programming
-// 1. Tabulation -> Bottom-Up
-// 2. Memoization -> Top-Down
+// 1. Tabulation -> Bottom-Up (base case to the required)
+// 2. Memoization -> Top-Down (required to the base case)
 
 // important terms : 
 // overlapping subproblems : while solving a problem, when we end up solving a part problem again,
@@ -40,6 +40,7 @@ int main (){
     // look at the base cases and assign their values in the dp array accordingly
     dpT[0] = 0;
     dpT[1] = 1;
+    // for 1 changing parameter (1-D dp), 1 outer loop for tabulation
     for (int i=2; i<=n; i++){
         // just replace f(n-1) and f(n-2) with dp[n-1] and dp[n-2]
         dpT[i] = dpT[i-1] + dpT[i-2];
