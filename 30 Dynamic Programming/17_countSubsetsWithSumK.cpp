@@ -85,3 +85,72 @@ int findWays(vector<int>& arr, int k)
 }
 // TC = O(n*k)
 // SC = O(k)
+
+
+// An important note : 
+// in this problem, given constraint is 1 <= arr[i]
+// but if the constraint were, 0 <= arr[i], then this base case would not return correct answer
+// e.g. consider, arr= {0, 0, 1}, target = 1;
+// the actual answer of this problem should be 4 ({0, 1}, {0, 1}, {0, 0, 1}, {1})
+// but this method would give its answer as 1, coz, after the first call, 
+// it will get target = 0 and according to the base it would return 1;
+// so, if the constraint is 0 <= arr[i], we have to change the base case and take the call upto ind==0
+// the modified base case will be -
+// when (ind == 0)
+//	- then two cases will be there, sum == 0 and sum != 0
+// 		now if (sum == 0), then if arr[0] == 0, then there will be two options - take or not take
+// 			i.e., if we take arr[0], then the sum will be 0, as arr[0] == 0, and even if we don't take it, then also the sum will be 0
+// 			i.e., two we will have two subsets here - [{0}, {}]. so, return 2;
+// 			and if it arr[0] != 0, then, only option is to not take it. (subset - {}), so return 1;
+// now, if sum != 0
+// 			then, return (arr[0] == sum);
+//	
+// code :-
+// if (ind == 0){
+// 	if (sum == 0){
+// 		if (arr[0] == 0) return 2;
+// 		else return 1;
+// 	}
+// 	else{
+// 		return (arr[0] == sum);
+// 	}
+// }
+
+// or, another form of it is ->
+// if (ind==0){
+// 	if (sum == 0 && arr[0] == 0) return 2;
+// 	if (sum == 0 || arr[0] == sum) return 1;
+// 	return 0;
+// }
+
+// this base case will be required in the next problem (dp-18)
+int f(int ind, int sum, vector<int> &arr, vector<vector<int>> &dp){
+	// base case
+	if (ind == 0){
+		if (sum == 0){
+			if (arr[0] == 0) return 2;
+			else return 1;
+		}
+		else{
+			return (arr[0] == sum);
+		}
+	}
+
+	if (dp[ind][sum] != -1)return dp[ind][sum];
+	// take or not take
+	int notTake = f(ind-1, sum, arr, dp);
+	int take = 0;
+	if (arr[ind] <= sum) take = f(ind-1, sum-arr[ind], arr, dp);
+
+	return dp[ind][sum] = take + notTake;
+}
+
+int findWays(vector<int>& arr, int k)
+{
+	// Write your code here.
+	int n = arr.size();
+	vector<vector<int>> dp(n, vector<int> (k+1, -1));
+	return f(n-1, k, arr, dp);
+}
+
+// tabulation and space optimization in next problem (dp-18)
