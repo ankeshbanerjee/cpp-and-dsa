@@ -38,6 +38,7 @@ bool subsetSumToK(int n, int k, vector<int> &arr) {
 }
 // recursion without memoization would cause a TC of O(2^n), coz, every pair (ind, target) has to options - take or notTake
 // TC of memoization is O(n*k) and SC is O(n*k) + O(n) (recursion stack space)
+// recursion stack space is O(n), coz, at a strech, the call can maxium go n to 0 i.e., f(n, taget) to f(0, target)
 
 
 // tabulation - 2 changing parameters (ind, target) - 2 outer loops
