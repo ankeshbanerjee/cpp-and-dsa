@@ -45,7 +45,7 @@ public:
 // SC = dp array + recursive stack space = O(N*M*M) + O(N)
 
 
-// tabulation - for 3 parameters (3-D dp), 3 outer loops for tabulation
+// tabulation - for 3 changing parameters (3-D dp), 3 outer nested loops for tabulation
 class Solution {
 public:
     int cherryPickup(vector<vector<int>>& grid) {
