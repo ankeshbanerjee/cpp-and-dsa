@@ -4,7 +4,7 @@
 
 // thumb rule of dp regarding subsequences -
 // express the problem in two parameters - (ind, target)
-// explore all the possibilites on that index
+// explore all the possibilites on that index - take or notTake (all the dp on subsequences will be based on this 'take' and 'notTake' approach)
 // return ans
 
 // in this problem f(ind, target) means considering the array from index [0 to ind]

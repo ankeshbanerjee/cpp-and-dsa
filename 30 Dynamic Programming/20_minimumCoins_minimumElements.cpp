@@ -7,7 +7,7 @@ using namespace std;
 // when you consider 'take', stand at the same index, with reducing the value of target.
 // and the rule of writing base case in subsequence problems is -
 // go to the last index (here index 0)
-// then consider an array containing a single element and a possible target
+// then consider an array containing a single element and consider a possible target
 
 int f(int ind, int target, vector<int> &nums, vector <vector<int>> &dp){
     // base case
