@@ -45,7 +45,7 @@ public:
         int n = text1.length();
         int m = text2.length();
         vector<vector<int>> dp(n+1, vector<int>(m+1, 0));
-        // // index=0 will work as index=-1
+        // index=0 will work as index=-1
         for (int i=0; i<=n; i++) dp[i][0] = 0;
         for (int i=0; i<=m; i++) dp[0][i] = 0;
 
@@ -70,10 +70,10 @@ public:
     int longestCommonSubsequence(string text1, string text2) {
         int n = text1.length();
         int m = text2.length();
-       vector<int>prev(m+1, 0), curr(m+1, 0);
-        // // index=0 will work as index=-1
-        for (int i=0; i<=n; i++) prev[0] = 0;
-        for (int i=0; i<=m; i++) prev[i] = 0;
+        vector<int>prev(m+1, 0), curr(m+1, 0);
+       
+       // index=0 will work as index=-1
+        for (int j=0; j<=m; j++) prev[j] = 0;
 
         for (int i=1; i<=n; i++){
             for (int j=1; j<=m; j++){
