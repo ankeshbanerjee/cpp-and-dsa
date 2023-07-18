@@ -50,6 +50,9 @@ public:
                 j--;
             }
         }
+        // the above loop has stopped bcz one of the strings has exhausted
+        // so, there might be characters left in the other string
+        // storing those characters now
         while(i>0){
             ans+=str1[i-1];
             i--;
