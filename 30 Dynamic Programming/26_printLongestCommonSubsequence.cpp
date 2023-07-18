@@ -30,7 +30,7 @@ string longestCommonSubsequence(string text1, string text2) {
     // whenever i or j reaches 0, that means either of strings has exhausted
     while(i>0 && j>0){
         if (text1[i-1] == text2[j-1]){
-            // if matched, go to the upper diagonal element
+            // if matched, go to the upper left diagonal element
             lcs[index] = text1[i-1];
             index--, i--, j--;
         }
