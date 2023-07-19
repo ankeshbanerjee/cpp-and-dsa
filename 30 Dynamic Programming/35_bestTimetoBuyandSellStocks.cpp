@@ -6,6 +6,8 @@ using namespace std;
 // then the buying cost should be the minimum from 1st day to (i-1)th day
 // keeping the track of min upto (i-1)th index
 // max of all the profit is the ans
+
+// why dp? coz memorizing the min in each iteration
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
