@@ -11,6 +11,10 @@ using namespace std;
 // deletion = 1+f(i-1, j, word1, word2, dp), coz deletion will shrink only the s1
 // replace = 1+f(i-1, j-1, word1, word2, dp), coz, s1[i] will be replaced by s2[j], so both will shrink
 
+// base case ->
+// if s1 gets exhausted first, then add all the remaining characters of s2, so no. of insertions = j+1 (if (i<0) return j+1;)
+// if s2 gets exhausted first, then delete all the remaining characters of s1, so no. deletions = i+1 (if (j<0) return i+1;)
+
 class Solution {
 private:
     int f(int i, int j, string &word1, string &word2, vector<vector<int>> &dp){
