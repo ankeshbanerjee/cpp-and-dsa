@@ -146,7 +146,7 @@ private:
 public:
     int maxProfit(vector<int>& prices) {
         int n = prices.size();
-        vector<vector<int>> dp(n, vector<int> (3, -1));
+        vector<vector<int>> dp(n, vector<int> (4, -1));
         return f(0, 0, prices, n, dp);
     }
 };
