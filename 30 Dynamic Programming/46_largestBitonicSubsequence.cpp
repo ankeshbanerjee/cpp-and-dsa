@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// modification in code of LIS
 // computing dp1 from forward
 // computing dp2 from backwards
 // bitonic means subsequence, which first increases then decreases
