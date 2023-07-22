@@ -99,7 +99,7 @@ public:
 
 
 // this method is required to print the Longest Increasing subsequence
-// here, dp[i] means the length of longest increasing subsequence, upto index i
+// here, dp[i] means the length of longest increasing subsequence that ends at i
 // see lecture dp-42
 class Solution {
 public:
