@@ -16,8 +16,9 @@ using namespace std;
 // then the two partitions of the stick will be -
 // [0, 1, 2, 3, 4, 5] - first partition
 // [5, 6, 7] - second partition
-// so, can the partitions - [3] and [5, 1] be independently solved?
-// the answer is NO!
+// so, can the partitions - [3] and [5, 1] be independently solved? coz, for dp to work, each partition has to be an individual subproblem,
+// they can't depend on other subproblem.
+// and the answer is NO! these are not individual subproblem.
 // coz, in the second partition [5 1], cut index 1 will belong to the first partition of the stick ([3] (cuts) => [0, 1, 2, 3, 4, 5] (stick)). 
 // so, the solution of second partition will be dependent upon the first partition.
 // so, they can't be independently solved
