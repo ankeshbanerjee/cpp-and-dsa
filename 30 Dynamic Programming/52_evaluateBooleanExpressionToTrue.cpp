@@ -1,6 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// initially taking the entire array into consideration (i=0, j=n-1)
+// as we noticed that inside the function it is needed to have the count of 'F' also
+// so, introduced a third paramter - 'isTrue', which can have two values - 0 and 1
+// f(i, j, 0) => no of ways to get 'F', in exp[i...j]
+// f(i, j, 1) => no of ways to get 'T', in exp[i...j]
+
+// now trying out all the possible partitions inside exp[i...j]
+// for (int ind = i+1; ind <= j-1; ind+=2) => this ind jumps to each operator inside exp[i...j], that's why doing ind = ind+2
+// then get the no. of T/F of the left partition by f(i, ind-1, 0/1)
+// get the no. of T/F of the right partition by f(ind+1, j, 0/1)
+// then count the no.s of T/F according to the current operator (exp[ind])
+
 #include <bits/stdc++.h> 
 #define ll long long
 int mod = 1e9+7;
@@ -16,7 +29,7 @@ ll f(int i, int j, int isTrue, string & exp, vector<vector<vector<ll>>> &dp){
     if (dp[i][j][isTrue] != -1) return dp[i][j][isTrue];
 
     ll ways = 0;
-    for (int ind = i+1; ind <= j-1; ind++){
+    for (int ind = i+1; ind <= j-1; ind+=2){
         ll lF = f(i, ind-1, 0, exp, dp);
         ll lT = f(i, ind-1, 1, exp, dp);
         ll rF = f(ind+1, j, 0, exp, dp);
@@ -68,7 +81,7 @@ int evaluateExp(string & exp) {
             if (i==j)continue;
             for (int isTrue=0; isTrue <= 1; isTrue++){
                 ll ways = 0;
-                for (int ind = i+1; ind <= j-1; ind++){
+                for (int ind = i+1; ind <= j-1; ind+=2){
                     ll lF = dp[i][ind-1][0];
                     ll lT = dp[i][ind-1][1];
                     ll rF = dp[ind+1][j][0];
