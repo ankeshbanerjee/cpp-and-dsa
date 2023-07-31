@@ -72,6 +72,6 @@ return 0;
 // space complexity -
 // O(n)
 // coz, from the recursion tree, we can see that
-// at max, the recursion call goes from 1 to n
+// at max, the recursion call goes from 0 to n
 // so, at max, there will be n recursion calls waiting in the stack to get executed
 // so, space complexity is the depth of the recursion tree, which is here O(n)
