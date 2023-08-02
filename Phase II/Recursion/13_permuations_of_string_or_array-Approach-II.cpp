@@ -27,3 +27,10 @@ public:
         return ans;
     }
 };
+
+// time complexity -
+// O(n!) (to generate all the permutations) * O(n) (for the loop running inside the function, OR, you can say this is the time taken to insert the 'ds' into 'ans')
+// so, time complexity = O(n! * n)
+
+// space complexity -
+// O(n!*n) (for ans vector) + O(n) (auxiliary stack space)
