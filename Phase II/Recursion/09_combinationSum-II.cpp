@@ -52,10 +52,18 @@ public:
 
 // opitimised approach
 // question asks to return sorted subsequences, so initially sort the array
-// run a loop, and check which element from ind to n-1, can be taken as the cureent element of the subsequence
+// run a loop, and check which element from ind to n-1, can be taken as the current element of the subsequence
 // i.e., in the very first function call, I am iterating and checking which can be my 0th element of the subsequences
 // in the next call, I will check, which can be the 1st element of the subsequences...... this will go on.
 // as the array is sorted, take the advantage of that to avoid taking duplicates
+
+
+// note : if (i>ind && candidates[i] == candidates[i-1]) continue;
+// why i>ind is done?
+// i goes from ind to n-1
+// so, if you are at the starting index (i=ind)
+// you don't need to check for duplicates, as this is the first time you are picking up the element
+// but for i>ind, you have to check for duplicates.
 
 // note : findCombinations(i+1, target-candidates[i], ds, ans, candidates, n); <- recursion call
 // doing i+1, not ind+1, coz, the subsets have to be sorted, so if we have picked an element as the current element of the subsequence, 
