@@ -1,0 +1,6 @@
+To build a unique tree two traversals is must. and one of them should be inorder.
+1. inorder and preorder
+2. inorder and postorder
+    -from these above combination of traversals, unique tree can be built.
+
+if preorder and postorder is given, then multiple can be built from those, unique tree will not be possible.
