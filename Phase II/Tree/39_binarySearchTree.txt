@@ -1,0 +1,14 @@
+* L<N<R
+* it should be true for every subtree
+* everything on left subtree should be smaller than node, 
+* everything on right subtree should be greater than node.
+
+* are duplicates allowed?
+* some books say not allowed.
+* to allow duplicates, few approaches can be done, such as ->
+1. L<=N<R
+2. storing nodes in the form of {node, freq}
+
+* why BST?
+-> searching in normal tree takes, O(N)
+-> is BST, searching takes O(logN)
